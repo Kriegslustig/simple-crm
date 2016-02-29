@@ -1,0 +1,10 @@
+app:
+  build: ./
+  container_name: simple_crm
+  volumes:
+    - ./:/app
+  ports:
+    - 443:443
+    - 80:80
+  restart: always
+
