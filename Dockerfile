@@ -14,5 +14,8 @@ RUN cd /etc/apache2/sites-enabled && ln -s ../sites-available/main.conf
 RUN rm /etc/apache2/sites-enabled/000-default.conf
 
 ENV PATH="$PATH:/root/.composer/vendor/bin/"
-CMD bash -c "service apache2 start && tail -F /var/log/apache2/error.log"
+CMD bash -c "\
+  service apache2 start && \
+  service mysql start && \
+  tail -F /var/log/apache2/error.log"
 
