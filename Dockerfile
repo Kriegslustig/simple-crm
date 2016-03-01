@@ -11,4 +11,5 @@ RUN curl -L http://curl.haxx.se/ca/cacert.pem > cacert.pem && \
 RUN composer global require "laravel/installer"
 
 ENV PATH="$PATH:/root/.composer/vendor/bin/"
+CMD ["tail", "-F", "/var/log/apache2/error.log"]
 
